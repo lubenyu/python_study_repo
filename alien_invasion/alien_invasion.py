@@ -1,9 +1,8 @@
-#! /usr/bin/env python3
-
 '''
     sys模块:系统相关的参数和函数
     pygame模块: 游戏相关实现的封装
 '''
+from pygame.sprite import Group
 import sys
 import pygame
 from ship import Ship
@@ -27,7 +26,10 @@ def run_game():
     bg_color = ()
     '''
     #  创建飞船对象，
-    ship = Ship(screen)
+    ship = Ship(setting,screen)
+    
+    # 创建一个用于存储子弹的编组
+    bullets = Group()
     
     # 开始游戏的主循环
     while True:
@@ -38,13 +40,16 @@ def run_game():
         # ship.blitme()
         
         # 一直监视键盘和鼠标事件 
-        gf.check_events(ship)
+        gf.check_events(setting,screen,ship,bullets)
         
-        # 当moving_right标志为 true时，调用类方法进行移动
+        # 飞船更新
         ship.update()
 
+        # 子弹更新
+        gf.update_bullets(bullets)
+        
         # 让最近绘制的屏幕可见
-        gf.update_screen(setting,screen,ship)
+        gf.update_screen(setting,screen,ship,bullets)
     
     
 run_game()
