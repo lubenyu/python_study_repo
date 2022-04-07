@@ -2,6 +2,7 @@ from operator import ne
 import sys
 import pygame
 from pygame.sprite import Group
+from alien import Alien
 from ship import Ship
 from bullet import Bullet
 from settings import Settings
@@ -17,6 +18,9 @@ def check_keydown_event(settings:Settings,screen:pygame.Surface,event,ship:Ship,
     elif event.key == pygame.K_SPACE:
         # 创建一个子弹，并将其加入bullets编组中
         fire_bullet(settings,screen,ship,bullets)
+    elif event.key == pygame.K_q:
+        sys.exit()
+        
     
 def check_keyup_event(event,ship:Ship):
     ''' 松开案件时的响应事件函数 '''
@@ -38,7 +42,7 @@ def check_events(settings:Settings,screen:pygame.Surface,ship:Ship,bullets):
             check_keyup_event(event,ship) 
       
             
-def update_screen(settings:Settings,screen:pygame.Surface,ship:Ship,bullets:Group):
+def update_screen(settings:Settings,screen:pygame.Surface,ship:Ship,bullets:Group,alien:Alien):
     ''' 更新屏幕上的图像，并切换到新屏幕 '''
     # 每次循环都会重新绘制屏幕
     screen.fill(settings.bg_color)
@@ -48,6 +52,8 @@ def update_screen(settings:Settings,screen:pygame.Surface,ship:Ship,bullets:Grou
         bullet.draw_bullet()
     
     ship.blitme()
+    
+    alien.biltme()
     
     # 让重新绘制的屏幕可见
     pygame.display.flip()

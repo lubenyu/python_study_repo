@@ -7,6 +7,7 @@ import sys
 import pygame
 from ship import Ship
 from settings import Settings
+from alien import Alien
 
 # 导入函数模块
 import game_functions as gf
@@ -31,6 +32,9 @@ def run_game():
     # 创建一个用于存储子弹的编组
     bullets = Group()
     
+    # 创建一个外星人对象
+    alien = Alien(setting,screen)
+    
     # 开始游戏的主循环
     while True:
         
@@ -49,7 +53,7 @@ def run_game():
         gf.update_bullets(bullets)
         
         # 让最近绘制的屏幕可见
-        gf.update_screen(setting,screen,ship,bullets)
+        gf.update_screen(setting,screen,ship,bullets,alien)
     
     
 run_game()
