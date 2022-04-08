@@ -1,0 +1,3 @@
+![image-20220403153130298](C:\鲁宇\3.学习笔记\Python\补充知识点\9.python 形参中星args和星星kwargs.assets\image-20220403153130298.png)
+
+![image-20220403153315735](C:\鲁宇\3.学习笔记\Python\补充知识点\9.python 形参中星args和星星kwargs.assets\image-20220403153315735.png)

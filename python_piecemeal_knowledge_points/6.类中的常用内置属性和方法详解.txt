@@ -1,0 +1,2 @@
+[见菜鸟教程](https://www.runoob.com/python/python-built-in-functions.html)
+

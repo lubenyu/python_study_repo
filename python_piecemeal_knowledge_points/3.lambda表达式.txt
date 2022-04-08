@@ -1,0 +1,19 @@
+[视频理解](https://www.bilibili.com/video/av24639639?from=search&seid=12067734808402250492&spm_id_from=333.337.0.0)
+
+
+
+**lambda表达式其实就是用来简洁表达一行就完的函数的表达式**
+
+举例：
+
+```python
+# def f(x):
+#	 return x*x
+# 那么这个函数就可以写作lambda表达式
+f = lambda x:x*x	# 
+
+print(f(2))
+```
+
+- `:` 之前的参数是lambda表达式的输入
+- `:` 之后的式子是lambda表达式的输出
